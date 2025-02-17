@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { ref } from "vue";
-
+  const nom = ref("");
 </script>
 
 <template>
@@ -8,7 +8,7 @@
     <div className="form q-mb-lg">
       <div className="row q-mb-md">
         <label>Nom:</label>
-        <input type="text">
+        <input v-model="nom" type="text">
         <label className="error">Maximum 15 caractères
         </label>
       </div>
@@ -22,10 +22,10 @@
       </div>
     </div>
     <div className="description q-mb-lg">
-      <p>Mon nom est <b>Danny</b> et j'ai <b>36</b> ans.</p>
+      <p>Mon nom est <b>{{nom}}</b> et j'ai <b>36</b> ans.</p>
       <p>Dans 10 ans, j'aurai <b>46</b> ans.</p>
       <p>Mon nom se compose de <b>5</b> caractères.</p>
-      <p>Mon nom en majuscules est <b>DANNY</b>.</p>
+      <p>Mon nom en majuscules est <b>{{ nom.toUpperCase() }}</b>.</p>
     </div>
     <div className="no-details">
       <p>Veuillez entrer un nom et un âge valide !</p>
