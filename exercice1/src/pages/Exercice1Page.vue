@@ -4,7 +4,22 @@
   const nom = ref("");
   const age = ref("");
 
+  const noms = [
+    'Pauline',
+    'Robert',
+    'Jean',
+    'Louise',
+    'Eve',
+    'Katy',
+    'Fritz'
+  ];
+
   // Méthodes
+  function personneAleatoire() {
+    nom.value = noms[Math.floor(Math.random() * noms.length)]!;
+    age.value = (Math.floor(Math.random() * 100) + 1).toString();
+  }
+
   const ageDans10Ans = computed(() => {
     return Math.floor(parseInt(age.value)) + 10;
   });
@@ -37,7 +52,7 @@
         <label className="error" v-if="!ageValide">Veuillez entrer un âge compris entre 1 et 100</label>
       </div>
       <div className="row">
-        <button>Générer une personne</button>
+        <button @click="personneAleatoire">Générer une personne</button>
       </div>
     </div>
     <div className="description q-mb-lg" v-if="nomValide && ageValide">
