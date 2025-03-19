@@ -33,7 +33,8 @@
       <plat v-for="plat in plats"
             :key="plat.id"
             :plat="plat"
-            v-on:supprimer="supprimer"></plat>
+            v-on:supprimer="supprimer"
+      /> <!-- TODO utiliser @ à la place de v-on et fermer le composant dans balise ouverture si pas de slot -->
     </div>
   </q-page>
 </template>
@@ -67,6 +68,7 @@ const plats = ref([
 ]);
 
 function supprimer(id) {
+  // TODO utiliser filter pour supprimer le plat : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
   for (let i = 0; i < plats.value.length; i++) {
     if (plats.value[i].id === id) {
       plats.value.splice(i, 1);

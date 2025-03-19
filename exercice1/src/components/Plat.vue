@@ -1,6 +1,6 @@
 <template>
   <div class="card shadow-1">
-    <img :src="plat.image" width="198" height="180">
+    <img :src="plat.image" width="198" height="180"> <!-- TODO Manque alt -> alt="plat.nom" -->
     <div class="card-content">
       <h1 class="text-primary">{{ plat.nom }}</h1>
       <p>{{ plat.description }}</p>
